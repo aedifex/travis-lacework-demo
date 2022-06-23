@@ -5,8 +5,9 @@ services:
 
 # Adding a comment.
 env:
-  - LW_ACCOUNT_NAME=lwintaedifextesting
-  - LW_ACCESS_TOKEN=_192442277f378acefff50b8b4a315bd3
+  global:
+    - LW_ACCOUNT_NAME=lwintaedifextesting
+    - LW_ACCESS_TOKEN=_192442277f378acefff50b8b4a315bd3
 
 before_install:
   - docker pull mongo:latest
@@ -19,4 +20,4 @@ script:
   - curl -L https://github.com/lacework/lacework-vulnerability-scanner/releases/latest/download/lw-scanner-linux-amd64 -o lw-scanner
   - chmod u+x lw-scanner
   - ./lw-scanner
-  -  ./lw-scanner evaluate mongo latest  --scan-library-packages --save --tags component=database
+  - ./lw-scanner evaluate mongo latest  --scan-library-packages --save --tags component=database

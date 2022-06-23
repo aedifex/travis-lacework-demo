@@ -4,10 +4,9 @@ services:
   - docker
 
 # Adding a comment.
-#env:
-#  global:
-#LW_ACCOUNT_NAME=lwintaedifextesting
-#LW_ACCESS_TOKEN=_192442277f378acefff50b8b4a315bd3
+env:
+  - LW_ACCOUNT_NAME=lwintaedifextesting
+  - LW_ACCESS_TOKEN=_192442277f378acefff50b8b4a315bd3
 
 before_install:
   - docker pull mongo:latest

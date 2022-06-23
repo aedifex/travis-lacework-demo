@@ -3,6 +3,11 @@ language: python
 services:
   - docker
 
+env:
+  global:
+LW_ACCOUNT_NAME=lwintaedifextesting
+LW_ACCESS_TOKEN=_192442277f378acefff50b8b4a315bd3
+
 before_install:
   - docker pull mongo:latest
 
@@ -13,4 +18,4 @@ python:
 script: 
   - curl -L https://github.com/lacework/lacework-vulnerability-scanner/releases/latest/download/lw-scanner-linux-amd64 -o lw-scanner
   - chmod u+x lw-scanner
-  - lw-scanner
+  - ./lw-scanner
